@@ -6,4 +6,4 @@ COPY wait-for-dynamodblocal.sh .
 RUN chmod +x *.sh
 HEALTHCHECK --interval=10s --retries=10 --timeout=3s CMD [[ -f /tables-created ]]
 
-CMD ./wait-for-dynamodblocal.sh && ./create-dynamodb-tables.sh
+CMD /bin/bash -c ./wait-for-dynamodblocal.sh && ./create-dynamodb-tables.sh

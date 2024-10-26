@@ -1,0 +1,69 @@
+ docker logs 144
+Initializing DynamoDB at endpoint http://dynamodblocal:8000
+
+An error occurred (ResourceNotFoundException) when calling the DescribeTable operation: Cannot do operations on a non-existent table
+creating table
+{
+    "TableDescription": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "consumerId",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "creationDate",
+                "AttributeType": "N"
+            },
+            {
+                "AttributeName": "orderId",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "ftgo-order-history",
+        "KeySchema": [
+            {
+                "AttributeName": "orderId",
+                "KeyType": "HASH"
+            }
+        ],
+        "TableStatus": "ACTIVE",
+        "CreationDateTime": 1729943517.008,
+        "ProvisionedThroughput": {
+            "LastIncreaseDateTime": 0.0,
+            "LastDecreaseDateTime": 0.0,
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 3,
+            "WriteCapacityUnits": 3
+        },
+        "TableSizeBytes": 0,
+        "ItemCount": 0,
+        "TableArn": "arn:aws:dynamodb:ddblocal:000000000000:table/ftgo-order-history",
+        "GlobalSecondaryIndexes": [
+            {
+                "IndexName": "ftgo-order-history-by-consumer-id-and-creation-time",
+                "KeySchema": [
+                    {
+                        "AttributeName": "consumerId",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "creationDate",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL"
+                },
+                "IndexStatus": "ACTIVE",
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": 3,
+                    "WriteCapacityUnits": 3
+                },
+                "IndexSizeBytes": 0,
+                "ItemCount": 0,
+                "IndexArn": "arn:aws:dynamodb:ddblocal:000000000000:table/ftgo-order-history/index/ftgo-order-history-by-consumer-id-and-creation-time"
+            }
+        ]
+    }
+}
+sleeping...
