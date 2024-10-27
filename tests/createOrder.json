@@ -1,0 +1,22 @@
+{
+  "restaurantId": 1,
+  "consumerId": 678,
+  "deliveryTime": "2023-10-01T12:30:00",
+  "lineItems": [
+    {
+      "menuItemId": "Pizza",
+      "quantity": 2
+    },
+    {
+      "menuItemId": "Pasta",
+      "quantity": 3
+    }
+  ],
+  "deliveryAddress": {
+    "street1": "456 Elm St",
+    "street2": "Apt 789",
+    "city": "Sample City",
+    "state": "SC",
+    "zip": "98765"
+  }
+}

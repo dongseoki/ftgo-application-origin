@@ -1,0 +1,22 @@
+{
+    "name": "Example Restaurant",
+    "address": {
+      "street1": "123 Main St",
+      "street2": "Suite 100",
+      "city": "Example City",
+      "state": "EX",
+      "zip": "12345"
+    },
+    "menu": {
+      "items": [
+        {
+          "name": "Pizza",
+          "price": 12.99
+        },
+        {
+          "name": "Pasta",
+          "price": 10.99
+        }
+      ]
+    }
+  }
