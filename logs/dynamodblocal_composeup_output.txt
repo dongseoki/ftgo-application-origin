@@ -1,0 +1,128 @@
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/153c89101629479c45975d40cf9beff40ec0c8572744856ef00126cc500ab20c-init/diff:/var/lib/docker/overlay2/nkiljxm6y0rqlett13kwyghhn/diff:/var/lib/docker/overlay2/vt3omgtw9j0thzvklw1eohb7v/diff:/var/lib/docker/overlay2/yuh1e88tijr2grqipoubcn0j3/diff:/var/lib/docker/overlay2/3vju6pto0rflm5k8hm8l6dv86/diff:/var/lib/docker/overlay2/3vpmlo7730axzyhs3w0l8hajk/diff:/var/lib/docker/overlay2/ea8d61a65ff6f92415fb6a86ebdf57b6937a88ece5bf91ca641aeb0e00c7d874/diff:/var/lib/docker/overlay2/df9bdd3e926b47e558411389182c156da4653d6cf9639c3c5f503b67c7702e6d/diff:/var/lib/docker/overlay2/d0a6fac467737cdfabc99a7e7753db901b2476a69e7544873d92787985026c96/diff:/var/lib/docker/overlay2/90ab52e43ec040b060b1cae88b3ea9a6dce84eb5c47519fbb168ab334c45f136/diff:/var/lib/docker/overlay2/4b9fac86a69a3c620c67cbbffee52d7bba5b54a1aea5e91e81fc9fe7235b0ab3/diff:/var/lib/docker/overlay2/f39226be22693a8f763d9a434f0d186e3ed47e59b5e2cab59f2c0a58755a30e1/diff:/var/lib/docker/overlay2/0b1184dbead69d43c50aa45f7ffb7fa15f3e0c93c51707faabb98ebde29f373e/diff",
+                "MergedDir": "/var/lib/docker/overlay2/153c89101629479c45975d40cf9beff40ec0c8572744856ef00126cc500ab20c/merged",
+                "UpperDir": "/var/lib/docker/overlay2/153c89101629479c45975d40cf9beff40ec0c8572744856ef00126cc500ab20c/diff",
+                "WorkDir": "/var/lib/docker/overlay2/153c89101629479c45975d40cf9beff40ec0c8572744856ef00126cc500ab20c/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "e34237fef783",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "AWS_DYNAMODB_ENDPOINT_URL=http://dynamodblocal:8000",
+                "AWS_ACCESS_KEY_ID=id_key",
+                "AWS_SECRET_ACCESS_KEY=access_key",
+                "AWS_REGION=us-west-2",
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568",
+                "PYTHON_VERSION=3.9.20",
+                "PYTHON_SHA256=6b281279efd85294d2d6993e173983a57464c0133956fbbb5536ec9646beaf0c"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "/bin/bash -c ./wait-for-dynamodblocal.sh \u0026\u0026 ./create-dynamodb-tables.sh"
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "[[ -f /tables-created ]]"
+                ],
+                "Interval": 10000000000,
+                "Timeout": 3000000000,
+                "Retries": 10
+            },
+            "Image": "ftgo-application-origin-dynamodblocal-init",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "10aa56a52a8bc5e23f15bf2b4995c3ccb18eac0f8400daf4b9d0fac11632e047",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "dynamodblocal:service_started:false",
+                "com.docker.compose.image": "sha256:78dfe98cc228006dd51694ef5f6d61e07c5158a944fd3fd2959e5f4b6efee470",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "ftgo-application-origin",
+                "com.docker.compose.project.config_files": "/Users/dongseoklee/github/Classification/my_projects/ftgo-application-origin/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/dongseoklee/github/Classification/my_projects/ftgo-application-origin",
+                "com.docker.compose.service": "dynamodblocal-init",
+                "com.docker.compose.version": "2.29.2"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "08ca5e0ea9875b044f878780e060e4adc3c389643a2d7245afb47ead69fd85dc",
+            "SandboxKey": "/var/run/docker/netns/08ca5e0ea987",
+            "Ports": {},
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "ftgo-application-origin_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "ftgo-application-origin-dynamodblocal-init-1",
+                        "dynamodblocal-init"
+                    ],
+                    "MacAddress": "02:42:ac:13:00:06",
+                    "DriverOpts": null,
+                    "NetworkID": "6b548dccde02cbceacb89308b63a3f9f766bf0aef81af9a9feead4e780c0cbc8",
+                    "EndpointID": "9a71de08a854f1096c849ad8abdd52b758f3aa1bf090d81a577c0a5e4051ead2",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.6",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "ftgo-application-origin-dynamodblocal-init-1",
+                        "dynamodblocal-init",
+                        "e34237fef783"
+                    ]
+                }
+            }
+        }
+    }
+]
+2024-10-27T14:11:42.066+0900 [LIFECYCLE] [org.gradle.api.Task] Waiting for dynamodblocal-init-1 to become healthy (it's unhealthy)
